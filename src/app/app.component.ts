@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'quizmaker';
+  userEmail: string;
+  userName: string;
+
+  constructor(){
+    this.userEmail = "s"; 
+    this.userName = "d";
+  }
 }
