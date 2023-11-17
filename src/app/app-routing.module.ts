@@ -8,38 +8,39 @@ import { UserHomepageComponent } from './components/user-homepage/user-homepage.
 import { QuizTakingFormPageComponent } from './components/quiz-taking-form-page/quiz-taking-form-page.component';
 import { QuizCreatingFormPageComponent } from './components/quiz-creating-form-page/quiz-creating-form-page.component';
 import { UserInfoPageComponent } from './components/user-info-page/user-info-page.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 
 const routes: Routes = [
   {
-    path: " ",
-    component: AppComponent
+    path: "",
+    component: WelcomePageComponent
   },
   {
-    path: "/login",
+    path: "login",
     component: LoginPageComponent
   },
   {
-    path: "/register",
+    path: "register",
     component: RegisterPageComponent
   },
   {
-    path: "/myResults",
+    path: "myResults",
     component: MyResultsPageComponent
   },
   {
-    path: "/home",
+    path: "home",
     component: UserHomepageComponent
   },
   {
-    path: "/quizTakingForm",
+    path: "quizTakingForm",
     component: QuizTakingFormPageComponent
   },
   {
-    path: "/createNewQuiz",
+    path: "createNewQuiz",
     component: QuizCreatingFormPageComponent
   },
   {
-    path: "/userInfo",
+    path: "userInfo",
     component: UserInfoPageComponent
   },
 ];

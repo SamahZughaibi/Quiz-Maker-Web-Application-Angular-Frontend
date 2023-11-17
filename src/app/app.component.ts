@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'quizmaker';
-  userEmail: string;
-  userName: string;
 
-  constructor(){
-    this.userEmail = "s"; 
-    this.userName = "d";
+  constructor(private router: Router){
+  }
+  ngOnInit(){
+    // this.router.navigate(['/login']); 
   }
 }

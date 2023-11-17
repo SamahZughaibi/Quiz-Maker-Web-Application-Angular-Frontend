@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { MyResultsPageComponent } from './components/my-results-page/my-results-
 import { QuizTakingFormPageComponent } from './components/quiz-taking-form-page/quiz-taking-form-page.component';
 import { QuizCreatingFormPageComponent } from './components/quiz-creating-form-page/quiz-creating-form-page.component';
 import { UserInfoPageComponent } from './components/user-info-page/user-info-page.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,15 @@ import { UserInfoPageComponent } from './components/user-info-page/user-info-pag
     MyResultsPageComponent,
     QuizTakingFormPageComponent,
     QuizCreatingFormPageComponent,
-    UserInfoPageComponent
+    UserInfoPageComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
