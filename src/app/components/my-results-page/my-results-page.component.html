@@ -1,1 +1,24 @@
-<p>my-results-page works!</p>
+<app-nav></app-nav>
+<h3>Here's your results {{userEmail}}</h3>
+<div class="container mt-5">
+    <div class="table-container">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Quiz Title</th>
+            <th scope="col">Your Score</th>
+            <th scope="col">Quiz Score</th>
+            <th scope="col">Date Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of results">
+            <td>{{result.quizTaken.title}}</td>
+            <td>{{result.totalScore}}</td>
+            <td>{{result.quizTaken.quizScore}}</td>
+            <td>{{result.date}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

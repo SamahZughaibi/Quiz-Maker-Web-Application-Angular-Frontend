@@ -21,4 +21,12 @@ export class UserService{
     postUser(body: any): Observable<any>{
       return this.http.post<any>(this.API_URL + "/users", body);
     }
+    getUserResults(email: string): Observable<any>{
+      return this.http.get<any>(this.API_URL + "/user/" + email + "/results").pipe(
+        catchError(error => {
+          console.error('Error fetching users:', error);
+          return of([]);
+        })
+      );
+    }
 }
