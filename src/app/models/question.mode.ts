@@ -1,3 +1,4 @@
+import { Choice } from "./choice.model";
 import { Quiz } from "./quiz.model";
 
 export class Question{
@@ -6,6 +7,7 @@ export class Question{
         private _questionText: string,
         private _pointsAssigned: number,
         private _homeQuiz: Quiz,
+        private _choices: Choice,
     ){}
     
     get questionId(): number {
@@ -38,5 +40,13 @@ export class Question{
 
     set homeQuiz(homeQuiz: Quiz) {
         this._homeQuiz = homeQuiz;
+    }
+
+    public get choices(): Choice {
+        return this._choices;
+    }
+    
+    public set choices(value: Choice) {
+        this._choices = value;
     }
 }

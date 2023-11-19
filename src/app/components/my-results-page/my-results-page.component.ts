@@ -20,7 +20,7 @@ export class MyResultsPageComponent {
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
-      this.userEmail = params['email'];
+      this.userEmail = params['userEmail'];
     });
     this.getResults(this.userEmail);
     console.log(this.userEmail);
@@ -34,7 +34,8 @@ export class MyResultsPageComponent {
         
       },
       error: (error) => {
-
+        console.log(error);
+        
       }
     });
   }

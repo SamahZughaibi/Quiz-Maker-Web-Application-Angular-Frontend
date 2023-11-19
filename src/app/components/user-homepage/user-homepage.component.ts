@@ -10,14 +10,12 @@ import { QuizService } from 'src/app/services/quiz.service';
   styleUrls: ['./user-homepage.component.css']
 })
 export class UserHomepageComponent {
-  userName: string;
   userEmail: string;
   quizzes: Quiz[] = [];
   quizNotFound: boolean;
   quizId: number;
 
-  constructor(private route: ActivatedRoute, private router: Router, private quizService: QuizService) {
-    this.userName = "";
+  constructor(private route: ActivatedRoute, private quizService: QuizService) {
     this.userEmail = "";
     this.quizNotFound = false;
     this.quizId = 0;
@@ -25,10 +23,8 @@ export class UserHomepageComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.userName = params['name'];
-      this.userEmail = params['email'];
+      this.userEmail = params['userEmail'];
     });
-    console.log(this.userName);
     this.getQuizzes();
   }
   

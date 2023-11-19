@@ -55,7 +55,7 @@ export class LoginPageComponent {
         const name: string = user.fullName;
         // console.log(name);
         
-        this.router.navigate(['/home'], { queryParams: { name: name, email: user.email }}); 
+        this.router.navigate(['/home'], { queryParams: { userEmail: user.email }}); 
         return;
       }
     }

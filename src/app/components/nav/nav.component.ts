@@ -13,7 +13,7 @@ export class NavComponent {
   @Input("userEmail")
   userEmail: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router){
+  constructor( private router: Router){
     this.userEmail = "";
     this.userName = "";
   }
@@ -22,6 +22,15 @@ export class NavComponent {
     console.log("userEmail From nav: ", this.userEmail);
   }
   goToResults(){
-    this.router.navigate(['../myResults'], { queryParams: {  email: this.userEmail }}); 
+    this.router.navigate(['../myResults'], { queryParams: {  userEmail: this.userEmail }}); 
+  }
+  goToHome(){
+    this.router.navigate(['../home'], { queryParams: {  userEmail: this.userEmail }}); 
+  }
+  goToCreateQuiz(){
+    this.router.navigate(['../createNewQuiz'], { queryParams: {  userEmail: this.userEmail }}); 
+  }
+  goToMyQuizzes(){
+    this.router.navigate(['../myQuizzes'], { queryParams: {  userEmail: this.userEmail }}); 
   }
 }

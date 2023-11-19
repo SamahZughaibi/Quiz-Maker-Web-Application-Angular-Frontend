@@ -1,3 +1,4 @@
+import { Question } from "./question.mode";
 import { User } from "./user.model";
 
 export class Quiz{
@@ -6,6 +7,7 @@ export class Quiz{
         private _title: string,
         private _owner: User,
         private _quizScore: number,
+        private _questions: Question[],
     ){}
 
     get quizId(): number {
@@ -38,5 +40,13 @@ export class Quiz{
 
     set quizScore(quizScore: number) {
         this._quizScore = quizScore;
+    }
+
+    public get questions(): Question[] {
+        return this._questions;
+    }
+    
+    public set questions(value: Question[]) {
+        this._questions = value;
     }
 }
