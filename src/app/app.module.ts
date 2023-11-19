@@ -16,7 +16,6 @@ import { MyResultsPageComponent } from './components/my-results-page/my-results-
 import { QuizTakingFormPageComponent } from './components/quiz-taking-form-page/quiz-taking-form-page.component';
 import { UserInfoPageComponent } from './components/user-info-page/user-info-page.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
-import { QuizResultsPageComponent } from './components/quiz-results-page/quiz-results-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { QuizResultsPageComponent } from './components/quiz-results-page/quiz-re
     QuizTakingFormPageComponent,
     UserInfoPageComponent,
     WelcomePageComponent,
-    QuizResultsPageComponent
   ],
   imports: [
     BrowserModule,
