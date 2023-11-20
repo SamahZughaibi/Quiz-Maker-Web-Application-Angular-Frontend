@@ -7,15 +7,13 @@
           <tr>
             <th scope="col">Quiz Title</th>
             <th scope="col">Your Score</th>
-            <th scope="col">Quiz Score</th>
             <th scope="col">Date Submitted</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let result of results">
             <td>{{result.quizTaken.title}}</td>
-            <td>{{result.totalScore}}</td>
-            <td>{{result.quizTaken.quizScore}}</td>
+            <td>{{result.totalScore}}%</td>
             <td>{{result.date}}</td>
           </tr>
         </tbody>

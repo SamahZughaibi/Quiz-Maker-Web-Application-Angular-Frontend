@@ -17,10 +17,8 @@ export class NavComponent {
     this.userEmail = "";
     this.userName = "";
   }
-  ngOnInit(){
-    // console.log(this.activatedRoute.snapshot.params);
-    console.log("userEmail From nav: ", this.userEmail);
-  }
+  ngOnInit(){}
+  
   goToResults(){
     this.router.navigate(['../myResults'], { queryParams: {  userEmail: this.userEmail }}); 
   }
@@ -28,7 +26,7 @@ export class NavComponent {
     this.router.navigate(['../home'], { queryParams: {  userEmail: this.userEmail }}); 
   }
   goToCreateQuiz(){
-    this.router.navigate(['../createNewQuiz'], { queryParams: {  userEmail: this.userEmail }}); 
+    this.router.navigate(['../userInfo'], { queryParams: {  userEmail: this.userEmail }}); 
   }
   goToMyQuizzes(){
     this.router.navigate(['../myQuizzes'], { queryParams: {  userEmail: this.userEmail }}); 

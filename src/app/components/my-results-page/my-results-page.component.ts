@@ -23,15 +23,11 @@ export class MyResultsPageComponent {
       this.userEmail = params['userEmail'];
     });
     this.getResults(this.userEmail);
-    console.log(this.userEmail);
   }
   getResults(email: string){
     this.userService.getUserResults(email).subscribe({
       next: (data) => {
-        console.log(data);
         this.results = data;
-        console.log(this.results);
-        
       },
       error: (error) => {
         console.log(error);

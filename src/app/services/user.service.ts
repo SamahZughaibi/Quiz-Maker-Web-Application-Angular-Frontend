@@ -13,7 +13,7 @@ export class UserService {
   getAllUsers(): Observable<any> {
     return this.http.get<any>(this.API_URL + '/users').pipe(
       catchError((error) => {
-        console.error('Error fetching users:', error);
+        console.log('Error fetching users:', error);
         return of([]);
       })
     );
@@ -26,7 +26,7 @@ export class UserService {
       .get<any>(this.API_URL + '/user/' + email + '/results')
       .pipe(
         catchError((error) => {
-          console.error('Error fetching results:', error);
+          console.log('Error fetching results:', error);
           return of([]);
         })
       );
@@ -36,9 +36,20 @@ export class UserService {
       .get<any>(this.API_URL + '/user/' + email + '/quizzes')
       .pipe(
         catchError((error) => {
-          console.error('Error fetching quizzes:', error);
+          console.log('Error fetching quizzes:', error);
           return of([]);
         })
       );
+  }
+  getUserByEmail(email: string): Observable<any> {
+    return this.http.get<any>(this.API_URL + '/user/' + email).pipe(
+      catchError((error) => {
+        console.log('Error fetching user:', error);
+        return of([]);
+      })
+    );
+  }
+  patchUserName(email: string, body: any): Observable<any>{
+    return this.http.patch<any>(this.API_URL + '/user/fullName/' + email, body);
   }
 }

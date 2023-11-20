@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Choice } from 'src/app/models/choice.model';
 import { Question } from 'src/app/models/question.mode';
 import { Quiz } from 'src/app/models/quiz.model';
@@ -36,7 +36,8 @@ export class MyQuizzesPageComponent {
     private userService: UserService,
     private quizService: QuizService,
     private questionService: QuestionService,
-    private choiceService: ChoiceService
+    private choiceService: ChoiceService,
+    private router: Router
   ) {
     this.userEmail = '';
     this.choiceCorrect = true;
@@ -122,7 +123,8 @@ export class MyQuizzesPageComponent {
       });
       console.log(this.selectedQuiz.questions);
 
-      //reload to add the newly added quiz
+      //reload to show the newly added quiz
+
       location.reload();
     }
   }
@@ -210,4 +212,13 @@ export class MyQuizzesPageComponent {
     const index: number = this.selectedQuestion.choices.indexOf(choice); 
     this.selectedQuestion.choices.splice(index, 1);
   }
+
+  goToResults(quizId: number){
+    this.router.navigate(['../../quizResults'], { queryParams: { quizId: quizId , userEmail: this.userEmail}}); 
+  }
+
+  goToQuizTakingPage(quizId: number, quizTitle: string){
+    this.router.navigate(['../../quizTakingForm'], { queryParams: { quizId: quizId , userEmail: this.userEmail, quizTitle: quizTitle}});
+  }
+
 }

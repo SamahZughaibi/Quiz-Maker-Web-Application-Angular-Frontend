@@ -7,7 +7,7 @@ export class Question{
         private _questionText: string,
         private _pointsAssigned: number,
         private _homeQuiz: Quiz,
-        private _choices: Choice,
+        private _choices: Choice[],
     ){}
     
     get questionId(): number {
@@ -42,11 +42,11 @@ export class Question{
         this._homeQuiz = homeQuiz;
     }
 
-    public get choices(): Choice {
+    public get choices(): Choice[] {
         return this._choices;
     }
     
-    public set choices(value: Choice) {
+    public set choices(value: Choice[]) {
         this._choices = value;
     }
 }

@@ -8,16 +8,16 @@
       <a
         *ngFor="let quiz of myQuizzes"
         class="list-group-item list-group-item-action"
-        (click)="selectQuiz(quiz)"
       >
-        {{ quiz.title }}
+      <h3 (click)="selectQuiz(quiz)">{{ quiz.title }}</h3>
         <div class="btn-group">
-        <button [cdkCopyToClipboard]="quiz.quizId">copy id</button>
-        <button>preview</button>
-        <button>results</button>
-        <button (click)="deleteQuiz(quiz)">delete</button>
-        </div>
+          <button [cdkCopyToClipboard]="quiz.quizId">copy id</button>
+          <button (click)="goToQuizTakingPage(quiz.quizId, quiz.quizTitle)">preview</button>
+          <button (click)="goToResults(quiz.quizId)">results</button>
+          <button (click)="deleteQuiz(quiz)">delete</button>
+          </div>
       </a>
+      
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="New Quiz Title" [(ngModel)]="newQuizTitle">
         <div class="input-group-append">

@@ -9,7 +9,7 @@
             <!-- Quiz Id Input -->
             <div class="form-group">
               <label for="quizId">Quiz Id</label>
-              <input type="number" class="form-control" id="quizId" placeholder="Enter Quiz Id">
+              <input type="number" class="form-control" id="quizId" placeholder="Enter Quiz Id" [(ngModel)] = "quizId">
               <p *ngIf="quizNotFound">There's no quiz with this id</p>
             </div>
 

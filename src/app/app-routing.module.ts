@@ -9,6 +9,7 @@ import { QuizTakingFormPageComponent } from './components/quiz-taking-form-page/
 import { UserInfoPageComponent } from './components/user-info-page/user-info-page.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { MyQuizzesPageComponent } from './components/quizzes-page/my-quizzes-page.component';
+import { QuizResultPageComponent } from './components/quiz-result-page/quiz-result-page.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: "myQuizzes",
     component: MyQuizzesPageComponent
+  },
+  {
+    path: "quizResults",
+    component: QuizResultPageComponent
   },
 ];
 

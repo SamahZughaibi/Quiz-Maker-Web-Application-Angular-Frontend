@@ -1,1 +1,27 @@
-<p>user-info-page works!</p>
+<app-nav [userEmail]="userEmail"></app-nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <div class="card">
+          <div class="card-header">
+            <h4 class="text-center">Edit your name</h4>
+          </div>
+          <div class="card-body">
+
+            <form [formGroup]="nameForm" (ngSubmit)="updateUserName(userName)">
+              <div class="form-group">
+                <label for="name">Fullname:</label>
+                <input type="text" class="form-control" id="name" formControlName="name" [(ngModel)]="userName">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="nameInput.invalid">save</button>
+              
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

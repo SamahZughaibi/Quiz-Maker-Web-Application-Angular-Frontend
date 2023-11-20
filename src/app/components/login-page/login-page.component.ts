@@ -29,9 +29,6 @@ export class LoginPageComponent {
 
   ngOnInit(){
     this.getAllUsers();
-    // console.log("current email: ", this.emailInput);
-    // console.log("current loggedIn: ", this.loggedIn);
-    
   } 
 
   getAllUsers(): void{
