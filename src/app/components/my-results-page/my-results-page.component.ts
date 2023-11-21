@@ -13,14 +13,13 @@ export class MyResultsPageComponent {
   results: QuizResult[] = [];
 
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService) {
-    this.userEmail = "";
-    console.log("userEmail at constructor: ", this.userEmail)
-   
+    this.userEmail = "";   
   }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
       this.userEmail = params['userEmail'];
+
     });
     this.getResults(this.userEmail);
   }
@@ -28,11 +27,18 @@ export class MyResultsPageComponent {
     this.userService.getUserResults(email).subscribe({
       next: (data) => {
         this.results = data;
+        this.formatDate();
       },
       error: (error) => {
         console.log(error);
         
       }
     });
+  }
+  formatDate(): void{
+    for(let result of this.results){
+      const formattedDate = new Date(result.date);      
+      result.date = formattedDate.toString();
+    }
   }
 }

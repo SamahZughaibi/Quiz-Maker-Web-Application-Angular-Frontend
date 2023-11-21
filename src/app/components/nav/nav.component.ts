@@ -7,15 +7,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  @Input("userName")
-  userName: string;
+
 
   @Input("userEmail")
   userEmail: string;
 
   constructor( private router: Router){
     this.userEmail = "";
-    this.userName = "";
   }
   ngOnInit(){}
   
