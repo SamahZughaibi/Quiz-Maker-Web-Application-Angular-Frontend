@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+
+  .table-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 0.5em;
+    background-color: #4a4e7a;
+    color: white;
+    width: 70%;
+    margin: auto;
+    padding: 0.8em;
+  }
+  table{
+    color: white;
+  }
+  td{
+    padding: 0.8em;
+  }

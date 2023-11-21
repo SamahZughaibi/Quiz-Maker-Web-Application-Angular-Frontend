@@ -6,7 +6,10 @@
     position: relative;
     text-wrap: wrap;
     word-wrap: break-word;
-    cursor: pointer;
+    
+}
+.list-group-item h3{
+  cursor: pointer;
 }
 .question-btn-group button, .btn-group button{
     z-index: 100;

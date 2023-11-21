@@ -1,10 +1,32 @@
-<header class="navbar navbar-expand-lg navbar-light">
+
+<nav class="nav-bar">
+	<div class="container">
+		<input type="checkbox" id="drop-down-cbox"/>
+		<label for="drop-down-cbox">
+			<span></span>
+			<span></span>
+			<span></span>
+		</label>
+
+		<img class="site-logo" (click)="goToHome()" src="../../../assets/images/quizmaker-logo-removebg.png">
+
+		<ul class="main-nav small-caps">
+			<li><a (click)="goToHome()">Take a quiz</a></li>
+			<li><a (click)="goToMyQuizzes()">My Quizzes</a></li>
+			<li><a (click)="goToResults()">My results</a></li>
+			<li><a (click)="goToCreateQuiz()">Edit name</a>
+			<li><a href="#">logout</a>
+		</ul>
+		
+	</div>
+</nav>
+<!-- <header class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" routerLink="../home">
       <img src="../../../assets/images/quizmaker-logo.png" alt="Logo">
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" (click)="goToHome()">Home </a>
             </li>
             <li class="nav-item">
@@ -22,3 +44,4 @@
           </ul>
     </div>
   </header>
+ -->

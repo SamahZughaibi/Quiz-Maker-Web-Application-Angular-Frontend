@@ -1,3 +1,54 @@
-img{
-    width: 20%;
+.col-md-6{
+    position: relative;
+    margin-left: 5%;
 }
+.col-md-6 h4{
+    animation-duration: 2s;
+}
+.logo {
+  width: 100%;
+  margin: 30% 0% 0% 0%;
+  animation-duration: 3s;
+}
+.guy{
+    width:35%;
+    position: absolute;
+    left: -11%;
+    top: 9%;
+    animation-duration: 1s;
+}
+.girl{
+    width: 40%;;
+    z-index: 0;
+    position: absolute;
+    left: 70%;
+    bottom: -10%;
+    animation-duration: 1s;
+}
+.login{
+    margin-right: 1%;
+    background-color: #3E4377;
+    border-color: #3E4377;
+}
+.login:hover{
+    background-color: #666eca;
+    border-color: #666eca;
+}
+.register{
+    margin-left: 1%;
+    background-color: #ed3478;
+    border-color: #ed3478;
+}
+.register:hover{
+    background-color: #f8679c;
+    border-color: #f8679c;
+}
+.buttonsdiv p{
+    margin-bottom: 20%;
+}
+.buttonsdiv{
+    width: 300px;
+    position: absolute;
+    right: 8%;
+    top: 10%;
+} 
