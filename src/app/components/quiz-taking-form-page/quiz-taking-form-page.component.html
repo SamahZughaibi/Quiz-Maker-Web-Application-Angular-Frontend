@@ -1,22 +1,18 @@
 <app-nav [userEmail]="userEmail"></app-nav>
-
+<h2 class="text-center">Good Luck!</h2>
 <div class="container mt-4">
-    <h2>{{ quizTitle }}</h2>
-    
-  
     <form (ngSubmit)="onSubmit()">
       <div *ngFor="let question of questions" class="question-box">
-        <h4>{{ question.questionText }} ({{ question.pointsAssigned }} points)</h4>
-        <div class="form-check" *ngFor="let choice of question.choices; let i = index">
-          <input
-            class="form-check-input"
+        <h4>{{ question.questionText }} <p>({{ question.pointsAssigned }} points)</p></h4>
+        <div *ngFor="let choice of question.choices; let i = index" class="choice-box">
+          <input 
             type="radio"
             name="{{question.questionId}}"
-            id="choice{{ i }}"
+            id="choice{{ choice.choiceId }}"
             value="{{ choice.correctAnswer }}"
             required
           >
-          <label class="form-check-label" for="choice{{ i }}">
+          <label class="form-check-label" for="choice{{ choice.choiceId }}">
             {{ choice.choiceText }}
           </label>
         </div>
