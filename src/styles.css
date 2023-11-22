@@ -1,4 +1,23 @@
 body{
-  background-color: #F1F2F3;
+  background-color: #f8f9f9;
   color: #3E4377;
 }
+
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #49509c #ffffff;
+  }
+
+  *::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #49509c;
+    border-radius: 9px;
+    border: 0px solid #ffffff;
+  }

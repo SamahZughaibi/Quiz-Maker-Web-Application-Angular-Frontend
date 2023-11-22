@@ -9,11 +9,11 @@
   height: 40.2em;
 }
 .card-header{
-  background-color: #ed3478;
+  background-color: #c93e71;
   color: white;
 }
 .card{
-  border: 2px solid  #ed3478;
+  border: 2px solid  #c93e71;
   margin-top: 10%;
   box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
   background-color: #F1F2F3;
@@ -61,6 +61,7 @@ button:hover {
     left: 0;
     top: 0;
     animation: animloader 2s linear infinite;
+    margin-right: 2%;
   }
   .loader::after {
     animation-delay: 1s;

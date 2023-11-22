@@ -1,6 +1,8 @@
 h2{
     margin:5% 5% 5% 2%;
     color: #c73f71;
+    font-weight: 800;
+    opacity: 0.5;
 }
 .container{
     border: 1.5px solid #ea8b25;

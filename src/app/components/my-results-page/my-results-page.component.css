@@ -168,3 +168,8 @@ body {
       transform: translateY(300px);
     }
   }
+  h3{
+    font-weight: 800;
+    opacity: 0.4;
+    margin: 2%;
+  }
