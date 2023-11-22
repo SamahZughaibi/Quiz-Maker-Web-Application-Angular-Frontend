@@ -5,7 +5,7 @@
     
   
     <form (ngSubmit)="onSubmit()">
-      <div *ngFor="let question of questions">
+      <div *ngFor="let question of questions" class="question-box">
         <h4>{{ question.questionText }} ({{ question.pointsAssigned }} points)</h4>
         <div class="form-check" *ngFor="let choice of question.choices; let i = index">
           <input

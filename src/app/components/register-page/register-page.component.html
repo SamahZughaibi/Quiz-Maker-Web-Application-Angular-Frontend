@@ -1,12 +1,17 @@
+<div class="rectangle">
+
 <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
+        <a href="#">
+          <img src="../../../assets/images/quizmaker-logo-removebg.png" alt="Logo" class="img-fluid mb-4 logo w3-animate-opacity">
+        </a>
         <p *ngIf="userExists">You already have an account, yay!<br> 
             <span class="loader"></span><span style="color: rgb(37, 37, 183) ">redirecting you to login page</span></p>
 
         <div class="card">
           <div class="card-header">
-            <h3 class="text-center">Welcome to QuizMaker!</h3>
+            <h4 class="text-center">Welcome to QuizMaker!</h4>
           </div>
           <div class="card-body">
 
@@ -26,7 +31,7 @@
 
                   </p>
               </div>
-              <button type="submit" class="btn btn-primary btn-block" [disabled]="registerForm.invalid">Register</button>
+              <button type="submit" [disabled]="registerForm.invalid">Register</button>
             </form>
 
           </div>
@@ -35,3 +40,4 @@
       </div>
     </div>
   </div>
+</div>

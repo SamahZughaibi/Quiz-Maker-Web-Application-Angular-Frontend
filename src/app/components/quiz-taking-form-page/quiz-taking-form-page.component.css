@@ -1,0 +1,12 @@
+.container{
+    /* border: 2px solid black; */
+    padding: 2% 8%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+    width: 70%;
+
+}
+.question-box{
+    margin-bottom: 5%;
+}

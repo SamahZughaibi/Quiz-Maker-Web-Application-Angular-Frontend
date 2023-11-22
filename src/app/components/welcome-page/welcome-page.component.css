@@ -1,3 +1,4 @@
+
 .col-md-6{
     position: relative;
     margin-left: 5%;
@@ -16,19 +17,22 @@
     left: -11%;
     top: 9%;
     animation-duration: 1s;
+    transition: 0.5s;
 }
 .girl{
-    width: 40%;;
+    width: 40%;
     z-index: 0;
     position: absolute;
     left: 70%;
     bottom: -10%;
     animation-duration: 1s;
+    transition: 0.5s;
 }
 .login{
     margin-right: 1%;
     background-color: #3E4377;
     border-color: #3E4377;
+    transition: 0.2s;
 }
 .login:hover{
     background-color: #666eca;
@@ -38,17 +42,28 @@
     margin-left: 1%;
     background-color: #ed3478;
     border-color: #ed3478;
+    transition: 0.2s;
 }
 .register:hover{
     background-color: #f8679c;
     border-color: #f8679c;
 }
 .buttonsdiv p{
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
 .buttonsdiv{
     width: 300px;
     position: absolute;
     right: 8%;
-    top: 10%;
+    top: 15%;
 } 
+.girl:hover{
+    width: 42%;
+}
+.guy:hover{
+    width:37%;
+}
+.rectangle{
+    border: 14px solid #3E4377;
+    height: 40.2em;
+}

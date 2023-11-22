@@ -23,7 +23,7 @@ export class NavComponent {
   goToHome(){
     this.router.navigate(['../home'], { queryParams: {  userEmail: this.userEmail }}); 
   }
-  goToCreateQuiz(){
+  goToEditName(){
     this.router.navigate(['../userInfo'], { queryParams: {  userEmail: this.userEmail }}); 
   }
   goToMyQuizzes(){
