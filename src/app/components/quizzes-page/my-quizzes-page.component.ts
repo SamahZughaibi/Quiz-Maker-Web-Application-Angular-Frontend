@@ -15,8 +15,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class MyQuizzesPageComponent {
   myQuizzes: any[] = [];
-  quizQuestions: Question[] = [];
-  questionChoices: Choice[] = [];
 
   userEmail: string;
 
@@ -47,8 +45,8 @@ export class MyQuizzesPageComponent {
     this.route.queryParams.subscribe((params) => {
       this.userEmail = params['userEmail'];
     });
-
-    this.getQuestions(this.getQuizzes());
+    // first get quizzes
+    this.getQuizzes();
   }
 
   getQuizzes(): Quiz[] {
@@ -63,26 +61,11 @@ export class MyQuizzesPageComponent {
     return this.myQuizzes;
   }
 
-  getQuestions(quizList: Quiz[]): void {
-    console.log('Entered');
-    console.log('Quizzes from getQuestions: ', quizList);
-    for (let quiz of this.myQuizzes) {
-      console.log('Entered');
-      this.quizService.getQuizQuestions(quiz.quizId).subscribe({
-        next: (data) => {
-          this.quizQuestions = data;
-        },
-        error: (error) => {
-          console.log(error);
-        },
-      });
-      console.log('user quizzes after questions: ', this.myQuizzes);
-    }
-  }
-
   selectQuiz(quiz: Quiz): void {
+    // when a quiz gets clicked
     this.selectedQuiz = quiz;
     this.selectedQuestion = null;
+    // then get the quizz's questions
     this.quizService.getQuizQuestions(quiz.quizId).subscribe({
       next: (data) => {
         quiz.questions = data;
@@ -95,7 +78,7 @@ export class MyQuizzesPageComponent {
 
   selectQuestion(question: Question): void {
     this.selectedQuestion = question;
-
+    // get the choices of the selected question
     this.questionService.getQuestionChoices(question.questionId).subscribe({
       next: (data) => {
         question.choices = data;
@@ -108,7 +91,7 @@ export class MyQuizzesPageComponent {
 
   addQuiz(): void {
     if (this.newQuizTitle.trim() !== '') {
-      //post quiz to user
+      // post quiz to user
       const body = {
         title: this.newQuizTitle.trim(),
         owner: {
@@ -121,10 +104,8 @@ export class MyQuizzesPageComponent {
           console.log(error);
         },
       });
-      console.log(this.selectedQuiz.questions);
 
       //reload to show the newly added quiz
-
       location.reload();
     }
   }
@@ -185,9 +166,9 @@ export class MyQuizzesPageComponent {
     this.quizService.deleteQuiz(quiz.quizId).subscribe({
       error: (e) => {
         console.log(e);
-      }
+      },
     });
-    const index: number = this.myQuizzes.indexOf(quiz); 
+    const index: number = this.myQuizzes.indexOf(quiz);
     this.myQuizzes.splice(index, 1);
   }
 
@@ -195,10 +176,10 @@ export class MyQuizzesPageComponent {
     this.questionService.deleteQuestion(question.questionId).subscribe({
       error: (e) => {
         console.log(e);
-      }
+      },
     });
 
-    const index: number = this.selectedQuiz.questions.indexOf(question); 
+    const index: number = this.selectedQuiz.questions.indexOf(question);
     this.selectedQuiz.questions.splice(index, 1);
   }
 
@@ -206,19 +187,27 @@ export class MyQuizzesPageComponent {
     this.choiceService.deleteChoice(choice.choiceId).subscribe({
       error: (e) => {
         console.log(e);
-      }
+      },
     });
-    
-    const index: number = this.selectedQuestion.choices.indexOf(choice); 
+
+    const index: number = this.selectedQuestion.choices.indexOf(choice);
     this.selectedQuestion.choices.splice(index, 1);
   }
 
-  goToResults(quizId: number){
-    this.router.navigate(['../../quizResults'], { queryParams: { quizId: quizId , userEmail: this.userEmail}}); 
+  // when results button gets clicked
+  goToResults(quizId: number) {
+    this.router.navigate(['../../quizResults'], {
+      queryParams: { quizId: quizId, userEmail: this.userEmail },
+    });
   }
 
-  goToQuizTakingPage(quizId: number, quizTitle: string){
-    this.router.navigate(['../../quizTakingForm'], { queryParams: { quizId: quizId , userEmail: this.userEmail, quizTitle: quizTitle}});
+  // when preview button gets clicked
+  goToQuizTakingPage(quizId: number, quizTitle: string) {
+    this.router.navigate(['../../quizTakingForm'], {
+      queryParams: {
+        quizId: quizId,
+        userEmail: this.userEmail,
+      },
+    });
   }
-
 }

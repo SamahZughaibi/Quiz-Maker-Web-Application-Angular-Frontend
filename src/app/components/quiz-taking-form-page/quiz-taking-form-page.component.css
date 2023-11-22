@@ -1,51 +1,53 @@
-h2{
-    margin:5% 5% 5% 2%;
-    color: #c73f71;
-    font-weight: 800;
-    opacity: 0.5;
+h2 {
+  margin: 5% 5% 5% 2%;
+  color: #c73f71;
+  font-weight: 800;
+  opacity: 0.5;
 }
-.container{
-    border: 1.5px solid #ea8b25;
-    padding: 2% 8%;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
-    width: 70%;
-    margin-bottom: 2%;
+.container {
+  border: 1.5px solid #ea8b25;
+  padding: 2% 8%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
+    0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+  width: 70%;
+  margin-bottom: 2%;
 }
-.question-box{
-    margin-bottom: 5%;
+.question-box {
+  margin-bottom: 5%;
 }
-.question-box p{
-    font-size: 0.6em;
+.question-box p {
+  font-size: 0.6em;
 }
-.choice-box{
-    margin: 2%;
-    cursor: pointer;
+.choice-box {
+  margin: 2%;
+  cursor: pointer;
 }
-label{
-    margin-left: 1%;
-    cursor: pointer;
+label {
+  margin-left: 1%;
+  cursor: pointer;
 }
-button{
-    cursor: pointer;
-    outline: 0;
-    display: inline-block;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: 8px 14px;
-    font-size: 1rem;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    color:#c73f71;
-    border-color:#c73f71;
-    margin-left: 39%;
+button {
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #c73f71;
+  border-color: #c73f71;
+  margin-left: 39%;
 }
 button:hover {
-    color: #fff;
-    background-color: #c73f71;
-    border-color: #c73f71;
+  color: #fff;
+  background-color: #c73f71;
+  border-color: #c73f71;
 }

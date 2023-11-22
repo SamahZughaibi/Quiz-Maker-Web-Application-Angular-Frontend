@@ -1,4 +1,5 @@
 <app-nav [userEmail]="userEmail"></app-nav>
+<!-- confetti for fun -->
 <div class="confetti">
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
@@ -14,25 +15,25 @@
   <div class="confetti-piece"></div>
   <div class="confetti-piece"></div>
 </div>
-
+<!-- results table -->
 <div class="container mt-5">
   <h3 class="text-center">YOUR RESULTS</h3>
-    <div class="table-container">
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Quiz Title</th>
-            <th scope="col">Your Score</th>
-            <th scope="col">Date Submitted</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let result of results">
-            <td>{{result.quizTaken.title}}</td>
-            <td>{{result.totalScore}}%</td>
-            <td>{{result.date}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="table-container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Quiz Title</th>
+          <th scope="col">Your Score</th>
+          <th scope="col">Date Submitted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{ result.quizTaken.title }}</td>
+          <td>{{ result.totalScore }}%</td>
+          <td>{{ result.date }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>

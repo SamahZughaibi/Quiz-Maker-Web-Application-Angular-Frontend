@@ -1,89 +1,151 @@
 <app-nav [userEmail]="userEmail"></app-nav>
 
 <div class="container mt-5">
-    <div class="row">
-<!-- Quiz Title List -->
-<div class="col-md-4">
-  <h2 class="text-center">QUIZZES</h2>
-    <div class="list-group">
-      <a
-        *ngFor="let quiz of myQuizzes"
-        class="list-group-item list-group-item-action quiz-item"
-      >
-      <h3 (click)="selectQuiz(quiz)">{{ quiz.title }}</h3>
-        <div class="btn-group">
-          <button class="copy-btn" [cdkCopyToClipboard]="quiz.quizId">copy id</button>
-          <button class="preview-btn" (click)="goToQuizTakingPage(quiz.quizId, quiz.quizTitle)">preview</button>
-          <button class="results-btn" (click)="goToResults(quiz.quizId)">results</button>
-          <button class="delete-btn" (click)="deleteQuiz(quiz)">delete</button>
+  <div class="row">
+    <!-- Quiz Title List -->
+    <div class="col-md-4">
+      <h2 class="text-center">QUIZZES</h2>
+      <div class="list-group">
+        <a
+          *ngFor="let quiz of myQuizzes"
+          class="list-group-item list-group-item-action quiz-item"
+        >
+          <h3 (click)="selectQuiz(quiz)">{{ quiz.title }}</h3>
+          <div class="btn-group">
+            <button class="copy-btn" [cdkCopyToClipboard]="quiz.quizId">
+              copy id
+            </button>
+            <button
+              class="preview-btn"
+              (click)="goToQuizTakingPage(quiz.quizId, quiz.quizTitle)"
+            >
+              preview
+            </button>
+            <button class="results-btn" (click)="goToResults(quiz.quizId)">
+              results
+            </button>
+            <button class="delete-btn" (click)="deleteQuiz(quiz)">
+              delete
+            </button>
           </div>
-      </a>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="New Quiz Title" [(ngModel)]="newQuizTitle">
-        <div class="input-group-append">
-          <button class="btn btn-success add-quiz" type="button" (click)="addQuiz()">Add Quiz</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Question List -->
-  <div class="col-md-4">
-    <h2 class="text-center qstn-text">QUESTIONS</h2>
-    <div *ngIf="selectedQuiz" class="list-group">
-        
-      <a
-        *ngFor="let question of selectedQuiz.questions"
-        class="list-group-item list-group-item-action question-list-group-item question-item"
-        (click)="selectQuestion(question)"
-      >
-        <h5>{{ question.questionText}}</h5>
-        <div class="question-btn-group">
-           {{question.pointsAssigned}} pts
-            <button class="delete-btn" (click)="deleteQuestion(question)">delete</button>
-        </div>
-        
         </a>
-        
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="New Question Title" [(ngModel)]="newQuestionText">
+        <!-- ADD QUIZ -->
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="New Quiz Title"
+            [(ngModel)]="newQuizTitle"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-success add-quiz"
+              type="button"
+              (click)="addQuiz()"
+            >
+              Add Quiz
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="input-group mb-3">
-        <p style="margin-right: 1em; position: relative; top: 0.5em;">Points: </p>
-        <input type="number" min="0" class="form-control" placeholder="New Question Title" [(ngModel)]="newQuestionScore">
-        <div class="input-group-append">
-          <button class="btn btn-success add-question" type="button" (click)="addQuestion()">Add Question</button>
+    </div>
+
+    <!-- Question List -->
+    <div class="col-md-4">
+      <h2 class="text-center qstn-text">QUESTIONS</h2>
+      <div *ngIf="selectedQuiz" class="list-group">
+        <a
+          *ngFor="let question of selectedQuiz.questions"
+          class="list-group-item list-group-item-action question-list-group-item question-item"
+          (click)="selectQuestion(question)"
+        >
+          <h5>{{ question.questionText }}</h5>
+          <div class="question-btn-group">
+            {{ question.pointsAssigned }} pts
+            <button class="delete-btn" (click)="deleteQuestion(question)">
+              delete
+            </button>
+          </div>
+        </a>
+        <!-- ADD QUESTION -->
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="New Question Title"
+            [(ngModel)]="newQuestionText"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <p style="margin-right: 1em; position: relative; top: 0.5em">
+            Points:
+          </p>
+          <input
+            type="number"
+            min="0"
+            class="form-control"
+            placeholder="New Question Title"
+            [(ngModel)]="newQuestionScore"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-success add-question"
+              type="button"
+              (click)="addQuestion()"
+            >
+              Add Question
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Choices List -->
+    <div class="col-md-4">
+      <h2 class="text-center chc-text">CHOICES</h2>
+      <div *ngIf="selectedQuestion" class="list-group">
+        <a
+          *ngFor="let choice of selectedQuestion.choices"
+          class="list-group-item list-group-item-action question-list-group-item choice-item"
+        >
+          <h6>{{ choice.choiceText }}</h6>
+          <div class="question-btn-group">
+            <p
+              [innerText]="choice.correctAnswer ? 'correct' : 'incorrect'"
+              [ngClass]="choice.correctAnswer ? 'green' : 'red'"
+            ></p>
+            <button class="delete-btn" (click)="deleteChoice(choice)">
+              delete
+            </button>
+          </div>
+        </a>
+        <!-- ADD CHOICE -->
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="New Choice Title"
+            [(ngModel)]="newChoiceTitle"
+          />
+          <label class="toggle">
+            <input
+              type="checkbox"
+              [checked]="choiceCorrect"
+              (click)="changeValue()"
+            />
+            <span class="labels" data-on="correct" data-off="incorrect"></span>
+          </label>
+        </div>
+        <div>
+          <button
+            class="btn btn-success add-choice"
+            type="button"
+            (click)="addChoice()"
+          >
+            Add Choice
+          </button>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Choices List -->
-  <div class="col-md-4">
-    <h2 class="text-center chc-text">CHOICES</h2>
-    <div *ngIf="selectedQuestion" class="list-group">
-      <a
-        *ngFor="let choice of selectedQuestion.choices"
-        class="list-group-item list-group-item-action question-list-group-item choice-item"
-      >
-        <h6>{{ choice.choiceText }}</h6>
-        <div class="question-btn-group">
-          <p [innerText]="choice.correctAnswer ? 'correct' : 'incorrect'" [ngClass]="choice.correctAnswer? 'green' : 'red'"></p>
-            <button class="delete-btn" (click)="deleteChoice(choice)">delete</button>
-        </div>
-      </a>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="New Choice Title" [(ngModel)]="newChoiceTitle">
-        <label class="toggle">
-          <input type="checkbox" [checked]="choiceCorrect" (click)="changeValue()">
-          <span class="labels" data-on="correct" data-off="incorrect"></span>
-        </label>
-      </div>
-      <div>
-        <button class="btn btn-success add-choice" type="button" (click)="addChoice()">Add Choice</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-  
+</div>

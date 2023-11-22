@@ -1,23 +1,23 @@
 <app-nav [userEmail]="userEmail"></app-nav>
 
 <div class="container mt-5">
-    <h3 class="text-center">QUIZ RESULTS</h3>
-    <div class="table-container">
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">User Name</th>
-            <th scope="col">User's Score</th>
-            <th scope="col">Date Submitted</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let result of quizResults">
-            <td>{{result.quizTaker.fullName}}</td>
-            <td>{{result.totalScore}}%</td>
-            <td>{{result.date}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <h3 class="text-center">QUIZ RESULTS</h3>
+  <div class="table-container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">User Name</th>
+          <th scope="col">User's Score</th>
+          <th scope="col">Date Submitted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of quizResults">
+          <td>{{ result.quizTaker.fullName }}</td>
+          <td>{{ result.totalScore }}%</td>
+          <td>{{ result.date }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>

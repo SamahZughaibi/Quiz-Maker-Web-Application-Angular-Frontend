@@ -1,25 +1,30 @@
 <app-nav [userEmail]="userEmail"></app-nav>
 <h2 class="text-center">Good Luck!</h2>
 <div class="container mt-4">
-    <form (ngSubmit)="onSubmit()">
-      <div *ngFor="let question of questions" class="question-box">
-        <h4>{{ question.questionText }} <p>({{ question.pointsAssigned }} points)</p></h4>
-        <div *ngFor="let choice of question.choices; let i = index" class="choice-box">
-          <input 
-            type="radio"
-            name="{{question.questionId}}"
-            id="choice{{ choice.choiceId }}"
-            value="{{ choice.correctAnswer }}"
-            required
-          >
-          <label class="form-check-label" for="choice{{ choice.choiceId }}">
-            {{ choice.choiceText }}
-          </label>
-        </div>
-        <hr>
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let question of questions" class="question-box">
+      <h4>
+        {{ question.questionText }}
+        <p>({{ question.pointsAssigned }} points)</p>
+      </h4>
+      <div
+        *ngFor="let choice of question.choices; let i = index"
+        class="choice-box"
+      >
+        <input
+          type="radio"
+          name="{{ question.questionId }}"
+          id="choice{{ choice.choiceId }}"
+          value="{{ choice.correctAnswer }}"
+          required
+        />
+        <label class="form-check-label" for="choice{{ choice.choiceId }}">
+          {{ choice.choiceText }}
+        </label>
       </div>
-  
-      <button type="submit" class="btn btn-primary">Submit Quiz</button>
-    </form>
-  </div>
-  
+      <hr />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Quiz</button>
+  </form>
+</div>

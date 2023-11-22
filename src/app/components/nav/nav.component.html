@@ -1,22 +1,24 @@
-
 <nav class="nav-bar">
-	<div class="container">
-		<input type="checkbox" id="drop-down-cbox"/>
-		<label for="drop-down-cbox">
-			<span></span>
-			<span></span>
-			<span></span>
-		</label>
+  <div class="container">
+    <input type="checkbox" id="drop-down-cbox" />
+    <label for="drop-down-cbox">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
-		<img class="site-logo" (click)="goToHome()" src="../../../assets/images/quizmaker-logo-removebg.png">
+    <img
+      class="site-logo"
+      (click)="goToHome()"
+      src="../../../assets/images/quizmaker-logo-removebg.png"
+    />
 
-		<ul class="main-nav small-caps">
-			<li><a (click)="goToHome()">Take a quiz</a></li>
-			<li><a (click)="goToMyQuizzes()">My Quizzes</a></li>
-			<li><a (click)="goToResults()">My results</a></li>
-			<li><a (click)="goToEditName()">Edit name</a>
-			<li><a href="#">logout</a>
-		</ul>
-		
-	</div>
+    <ul class="main-nav small-caps">
+      <li><a (click)="goToHome()">Take a quiz</a></li>
+      <li><a (click)="goToMyQuizzes()">My Quizzes</a></li>
+      <li><a (click)="goToResults()">My results</a></li>
+      <li><a (click)="goToEditName()">Edit name</a></li>
+      <li><a href="#">logout</a></li>
+    </ul>
+  </div>
 </nav>
