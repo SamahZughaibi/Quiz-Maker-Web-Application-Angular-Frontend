@@ -1,24 +1,26 @@
 <app-nav [userEmail]="userEmail"></app-nav>
 
 <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <h3 class="text-center">EDIT YOUR NAME</h3>
-        <div class="card">
-          <div class="card-body">
-
-            <form [formGroup]="nameForm" (ngSubmit)="updateUserName(userName)">
-              <div class="form-group">
-                <label for="name">Fullname:</label>
-                <input type="text" class="form-control" id="name" formControlName="name" [(ngModel)]="userName">
-              </div>
-              <button type="submit" [disabled]="nameInput.invalid">save</button>
-              
-            </form>
-
-          </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h3 class="text-center">EDIT YOUR NAME</h3>
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="nameForm" (ngSubmit)="updateUserName(userName)">
+            <div class="form-group">
+              <label for="name">Fullname:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                formControlName="name"
+                [(ngModel)]="userName"
+              />
+            </div>
+            <button type="submit" [disabled]="nameInput.invalid">save</button>
+          </form>
         </div>
-
       </div>
     </div>
   </div>
+</div>

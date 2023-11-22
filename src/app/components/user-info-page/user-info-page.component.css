@@ -1,40 +1,42 @@
-.form-group{
-    margin: 1em;
+.form-group {
+  margin: 1em;
 }
 
-.card-header{
-    background-color: #ea8b25;
-    color: white;
+.card-header {
+  background-color: #ea8b25;
+  color: white;
 }
-.card{
-    border: 6px solid  #ea8b25;
-    margin-top: 10%;
-    box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
-    background-color: #ffffff;
+.card {
+  border: 6px solid #ea8b25;
+  margin-top: 10%;
+  box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
+    0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+  background-color: #ffffff;
 }
-button{
-    cursor: pointer;
-    outline: 0;
-    display: inline-block;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: 6px 12px;
-    font-size: 1rem;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    color:#c93e71;
-    border-color:#c93e71;
-    margin-left: 44%;
+button {
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #c93e71;
+  border-color: #c93e71;
+  margin-left: 44%;
 }
 button:hover {
-    color: #fff;
-    background-color: #c93e71;
-    border-color: #c93e71;
+  color: #fff;
+  background-color: #c93e71;
+  border-color: #c93e71;
 }
-h3{
-    font-weight: 800;
-    opacity: 0.4;
+h3 {
+  font-weight: 800;
+  opacity: 0.4;
 }

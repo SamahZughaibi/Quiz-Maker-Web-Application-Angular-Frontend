@@ -9,7 +9,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register-page.component.css'],
 })
 export class RegisterPageComponent {
-  loggedIn: boolean;
   users: any[] = [];
   userExists: boolean;
 
@@ -18,7 +17,6 @@ export class RegisterPageComponent {
   emailInput: FormControl;
 
   constructor(private router: Router, private userService: UserService) {
-    this.loggedIn = false;
     this.userExists = false;
 
     this.nameInput = new FormControl('', Validators.required);
@@ -34,16 +32,12 @@ export class RegisterPageComponent {
 
   ngOnInit() {
     this.getAllUsers();
-    // console.log("current email: ", this.emailInput);
-    // console.log("current loggedIn: ", this.loggedIn);
   }
 
   getAllUsers(): void {
     this.userService.getAllUsers().subscribe({
       next: (data) => {
-        console.log('data: ', data);
         this.users = data;
-        console.log('Users: ', this.users);
       },
       error: (error) => {
         console.log(error);
@@ -51,10 +45,11 @@ export class RegisterPageComponent {
     });
   }
   onSubmit(): void {
-    // console.log("current email: ", this.emailInput.value);
     for (let user of this.users) {
+      // if the email already registered, redirect to login page
       if (user.email === this.emailInput.value) {
         this.userExists = true;
+        // a message will be displayed then the user will be redirected
         setTimeout(() => {
           this.loginRedirecting();
         }, 2000);
@@ -62,26 +57,22 @@ export class RegisterPageComponent {
       }
     }
     if (!this.userExists) {
+      // if the email is not registered, add the user to the database
       const body = {
         email: this.emailInput.value,
         fullName: this.nameInput.value,
       };
       this.userService.postUser(body).subscribe({
-        next: (data) => {
-          // alert("User created successfully!");
-        },
         error: (error) => {
           console.log(error);
-        }
+        },
       });
-      // console.log(name);
-      this.loggedIn = true;
       this.router.navigate(['/home'], {
-        queryParams: { name: this.nameInput.value, email: this.emailInput.value },
+        queryParams: { userEmail: this.emailInput.value },
       });
     }
   }
-  loginRedirecting(): void{
+  loginRedirecting(): void {
     this.router.navigate(['/login']);
   }
 }

@@ -1,42 +1,67 @@
 <div class="rectangle">
-
-<div class="container mt-5">
+  <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <a href="#">
-          <img src="../../../assets/images/quizmaker-logo-removebg.png" alt="Logo" class="img-fluid mb-4 logo w3-animate-opacity">
+          <img
+            src="../../../assets/images/quizmaker-logo-removebg.png"
+            alt="Logo"
+            class="img-fluid mb-4 logo w3-animate-opacity"
+          />
         </a>
-        <p *ngIf="userExists">You already have an account, yay!<br> 
-            <span class="loader"></span><span style="color: rgb(37, 37, 183) ">redirecting you to login page</span></p>
+        
+        <p *ngIf="userExists">
+          You already have an account, yay!<br />
+          <span class="loader"></span
+          ><span style="color: rgb(37, 37, 183)"
+            >redirecting you to login page</span
+          >
+        </p>
 
         <div class="card">
           <div class="card-header">
             <h4 class="text-center">Welcome to QuizMaker!</h4>
           </div>
           <div class="card-body">
-
             <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" class="form-control" id="email" placeholder="Enter your email" formControlName="email">
-                <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">
-                    please enter a valid email 
-                  </p>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                  formControlName="email"
+                />
+                <p
+                  class="error-msg"
+                  *ngIf="emailInput.invalid && emailInput.touched"
+                >
+                  please enter a valid email
+                </p>
               </div>
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your fullname" formControlName="name">
-                <p class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
-                    we'd like to know your name &#9829;
-
-                  </p>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your fullname"
+                  formControlName="name"
+                />
+                <p
+                  class="error-msg"
+                  *ngIf="nameInput.invalid && nameInput.touched"
+                >
+                  we'd like to know your name &#9829;
+                </p>
               </div>
-              <button type="submit" [disabled]="registerForm.invalid">Register</button>
+              <button type="submit" [disabled]="registerForm.invalid">
+                Register
+              </button>
             </form>
-
           </div>
         </div>
-
       </div>
     </div>
   </div>
