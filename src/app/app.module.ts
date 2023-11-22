@@ -6,7 +6,6 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { UserHomepageComponent } from './components/user-homepage/user-homepage.component';
@@ -21,7 +20,6 @@ import { QuizResultPageComponent } from './components/quiz-result-page/quiz-resu
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     NavComponent,
     LoginPageComponent,
     UserHomepageComponent,
