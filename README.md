@@ -51,7 +51,7 @@ This page is first shows up when you open the application. It contains the logo,
 
   ![Welcome Page](/readmeImages/welcome-page.png)
 </details>
-<br>
+
 
 - #### Login Page `/login`
 This is where you can log in if you have an account. It will redirect you to `/home`.
@@ -61,7 +61,7 @@ This is where you can log in if you have an account. It will redirect you to `/h
 
   ![Login Page](/readmeImages/login-page.png)
 </details>
-<br>
+
 
 - #### Register Page `/register`
 It's the page where you can register as a new user.
@@ -71,7 +71,7 @@ It's the page where you can register as a new user.
   
   ![Register Page](/readmeImages/register-page.png)
 </details>
-<br>
+
 
 - #### Home (Take a quiz)  Page `/home`
 Once you registered or logged in you will see the home page, which is also the "Take a Quiz" page. You can paste the quiz ID here to take the respective quiz.
@@ -81,7 +81,7 @@ Once you registered or logged in you will see the home page, which is also the "
   
   ![Home Page](/readmeImages/home-page.png)
 </details>
-<br>
+
 
 - #### My Quizzes Page `/myQuizzes`
 If you're looking to create quizzes this is where you'll work. You create quizzes, questions, and choices and then view and edit them.
@@ -91,7 +91,7 @@ If you're looking to create quizzes this is where you'll work. You create quizze
   
   ![My Quizzes Page](/readmeImages/my-quizzes-page.png)
 </details>
-<br>
+
 
 - #### Quiz Results Page `/quizResults`
 When you click on "results" button on any of the quizzes from `/myQuizzes`, you'll see this page appear with results of the clicked quiz. The results are of the users who have taken the quiz.
@@ -101,7 +101,7 @@ When you click on "results" button on any of the quizzes from `/myQuizzes`, you'
   
   ![Quiz Results Page](/readmeImages/quiz-results-page.png)
 </details>
-<br>
+
 
 - #### My Results Page `/myResults`
 This page shows you your results to the quizzes you've taken.
@@ -111,7 +111,7 @@ This page shows you your results to the quizzes you've taken.
   
   ![My Results Page](/readmeImages/my-results-page.png)
 </details>
-<br>
+
 
 - #### Edit Name Page `/userInfo`
 You can edit your name from this page.
@@ -121,7 +121,6 @@ You can edit your name from this page.
   
   ![User Info Page](/readmeImages/user-info-page.png)
 </details>
-<br>
 
 - #### Quiz Form Page `/takingQuizForm`
 This page containg the quiz taking form where you'll be able to view the quiz and choose your answers then submit them.
@@ -131,7 +130,6 @@ This page containg the quiz taking form where you'll be able to view the quiz an
   
   ![Quiz Form Page](/readmeImages/quiz-form-page.png)
 </details>
-<br>
 
 ## Technologies Used
 - Angular
