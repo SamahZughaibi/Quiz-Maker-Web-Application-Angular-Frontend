@@ -43,7 +43,7 @@ ng serve
 
 ## Pages/Routes
 
-- #### Welcome Page
+- ### Welcome Page
 This page is first shows up when you open the application. It contains the logo, and two buttons for login and register.
 <br>
 <details>
@@ -53,7 +53,7 @@ This page is first shows up when you open the application. It contains the logo,
 </details>
 
 
-- #### Login Page `/login`
+- ### Login Page `/login`
 This is where you can log in if you have an account. It will redirect you to `/home`.
 <br>
 <details>
@@ -63,7 +63,7 @@ This is where you can log in if you have an account. It will redirect you to `/h
 </details>
 
 
-- #### Register Page `/register`
+- ### Register Page `/register`
 It's the page where you can register as a new user.
 <br>
 <details>
@@ -73,7 +73,7 @@ It's the page where you can register as a new user.
 </details>
 
 
-- #### Home (Take a quiz)  Page `/home`
+- ### Home (Take a quiz)  Page `/home`
 Once you registered or logged in you will see the home page, which is also the "Take a Quiz" page. You can paste the quiz ID here to take the respective quiz.
 <br>
 <details>
@@ -83,7 +83,7 @@ Once you registered or logged in you will see the home page, which is also the "
 </details>
 
 
-- #### My Quizzes Page `/myQuizzes`
+- ### My Quizzes Page `/myQuizzes`
 If you're looking to create quizzes this is where you'll work. You create quizzes, questions, and choices and then view and edit them.
 <br>
 <details>
@@ -93,7 +93,7 @@ If you're looking to create quizzes this is where you'll work. You create quizze
 </details>
 
 
-- #### Quiz Results Page `/quizResults`
+- ### Quiz Results Page `/quizResults`
 When you click on "results" button on any of the quizzes from `/myQuizzes`, you'll see this page appear with results of the clicked quiz. The results are of the users who have taken the quiz.
 <br>
 <details>
@@ -103,7 +103,7 @@ When you click on "results" button on any of the quizzes from `/myQuizzes`, you'
 </details>
 
 
-- #### My Results Page `/myResults`
+- ### My Results Page `/myResults`
 This page shows you your results to the quizzes you've taken.
 <br>
 <details>
@@ -113,7 +113,7 @@ This page shows you your results to the quizzes you've taken.
 </details>
 
 
-- #### Edit Name Page `/userInfo`
+- ### Edit Name Page `/userInfo`
 You can edit your name from this page.
 <br>
 <details>
@@ -122,7 +122,7 @@ You can edit your name from this page.
   ![User Info Page](/readmeImages/user-info-page.png)
 </details>
 
-- #### Quiz Form Page `/takingQuizForm`
+- ### Quiz Form Page `/takingQuizForm`
 This page containg the quiz taking form where you'll be able to view the quiz and choose your answers then submit them.
 <br>
 <details>
